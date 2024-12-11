@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     kotlin("native.cocoapods")
     kotlin("plugin.serialization")
+    alias(libs.plugins.mavenPublish)
 }
 
 //TODO: change your group
@@ -44,6 +45,7 @@ kotlin {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
+                api(compose.material3)
                 implementation(libs.koin.core)
                 implementation(libs.ktor.json)
                 implementation(libs.ktor.client.logging)

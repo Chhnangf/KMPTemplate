@@ -10,6 +10,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import com.kashif.common.charts.BarChartView
+import com.kashif.common.charts.model.ChartDataSet
+import com.kashif.common.charts.style.BarChartDefaults
 import com.seiko.imageloader.ImageRequestState
 import com.seiko.imageloader.rememberAsyncImagePainter
 
@@ -21,10 +24,16 @@ internal fun App(platform: String) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceAround) {
-                AsyncImage(
-                    url =
-                        "https://3.bp.blogspot.com/-VVp3WvJvl84/X0Vu6EjYqDI/AAAAAAAAPjU/ZOMKiUlgfg8ok8DY8Hc-ocOvGdB0z86AgCLcBGAsYHQ/s1600/jetpack%2Bcompose%2Bicon_RGB.png",
-                    modifier = Modifier.size(200.dp))
+            val items: List<Float> = listOf(100f, -60f, 0f, -90f, 40f, 80f)
+            BarChartView(
+                dataSet = ChartDataSet(
+                    items = items,
+                    title = "Emotional",
+                ),
+                style = BarChartDefaults.style(
+                    space = 2.dp,
+                )
+            )
                 Button(onClick = { text = "Hello, $platform" }) { Text(text) }
             }
     }

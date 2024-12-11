@@ -27,6 +27,9 @@ image-loader-version = "1.5.3"
 
 accompanist-version = "0.25.2"
 
+# https://github.com/vanniktech/gradle-maven-publish-plugin
+mavenPublish = "0.28.0"
+
 [libraries]
 androidGradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 composeGradle = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose" }
@@ -56,3 +59,6 @@ material-icon-extended = {module = "org.jetbrains.compose.material:material-icon
 image-loader = {module= "io.github.qdsfdhvh:image-loader", version.ref = "image-loader-version"}
 
 junit = "junit:junit:4.13.2"
+
+[plugins]
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
